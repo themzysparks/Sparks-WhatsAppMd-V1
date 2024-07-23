@@ -1,5 +1,5 @@
 # Use a Node.js image that meets the requirements for npm@10.8.2
-FROM node:20-alpine
+FROM node
 
 # Install git, python3, make, g++, pkg-config, and build dependencies
 RUN apk add --no-cache git python3 make g++ pkg-config cairo-dev pango-dev giflib-dev
