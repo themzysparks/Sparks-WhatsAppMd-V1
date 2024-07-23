@@ -6,6 +6,9 @@ RUN git clone https://github.com/themzysparks/Sparks-WhatsAppMd-V1 /root/Sparks
 RUN npm cache clean --force
 RUN rm -rf /root/Sparks/node_modules
 
+# Update npm to the latest version
+RUN npm install -g npm@latest
+
 # Install dependencies
 WORKDIR /root/Sparks
 RUN npm install
