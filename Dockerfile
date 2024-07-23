@@ -7,7 +7,7 @@ RUN npm cache clean --force
 RUN rm -rf /root/Sparks/node_modules
 
 # Update npm to the latest version
-RUN npm install -g npm@latest
+RUN npm install -g npm@10.8.2
 
 # Install dependencies
 WORKDIR /root/Sparks
