@@ -1,27 +1,15 @@
-# Use a Node.js image that meets the requirements for npm@10.8.2
 FROM node
 
-# Install git, python3, make, g++, pkg-config, and build dependencies
-RUN apk add --no-cache git python3 make g++ pkg-config cairo-dev pango-dev giflib-dev
-
-# Clone the repository
 RUN git clone https://github.com/themzysparks/Sparks-WhatsAppMd-V1 /root/Sparks
 
 # Clear npm cache and remove node_modules directories
 RUN npm cache clean --force
 RUN rm -rf /root/Sparks/node_modules
 
-# Update npm to the latest version
-RUN npm install -g npm@10.8.2
-
-# Set the working directory
-WORKDIR /root/Sparks
-
 # Install dependencies
+WORKDIR /root/Sparks
 RUN npm install
 
-# Expose the application port
+# Add additional Steps To Run...
 EXPOSE 3000
-
-# Start the application
-CMD ["npm", "start"]
+CMD ["npm","start" ]
